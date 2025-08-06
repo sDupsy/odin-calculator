@@ -38,3 +38,28 @@ h1, h2, h3, h4, h5, h6 {
 .row {
     border: 2px black solid;
 }
+
+body {
+    background-color: #1f1f1f;
+}
+
+h1 {
+    color: #eef0ff;
+    text-align: center;
+    margin: 16px;
+}
+
+#container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first {
+    color:#eef0ff;
+    border: 1px grey solid;
+    border-radius: 16px;
+    width: 160px;
+    justify-items: end;
+    padding-right: 16px
+}
