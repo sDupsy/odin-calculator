@@ -35,9 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.row {
-    border: 2px black solid;
-}
+
 
 body {
     background-color: #1f1f1f;
@@ -53,13 +51,45 @@ h1 {
     display:flex;
     flex-direction: column;
     align-items: center;
+    gap: 2px;
+    margin-top: 64px;
 }
 
 .first {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     color:#eef0ff;
     border: 1px grey solid;
     border-radius: 16px;
     width: 160px;
-    justify-items: end;
-    padding-right: 16px
+    padding-right: 16px;
+    margin-bottom: 8px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    color:#eef0ff;
+    padding: 8px 32px;
+    border-radius: 16px;
+    border-style: none;
+    width: 50px;
+    text-align: center;
+}
+
+.action {
+    background-color: #2C303D;
+}
+
+.number {
+    background-color: #333438;
+}
+
+.row {
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
 }
