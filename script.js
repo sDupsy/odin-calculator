@@ -35,6 +35,9 @@ function operate(num1, num2, operator) {
   else if (operator === "×") {
     return multiply(num1,num2);
   }
+  else if (operator === "÷" && num2 === 0) {
+    return "Error";
+  }
   else if (operator === "÷") {
     return divide(num1,num2);
   }
@@ -70,19 +73,19 @@ buttons.forEach(button => {
       operator = value;
       temp = "";
     }
-    else if (value in numbers && operators.some(operator => calculationDisplay.textContent.includes(operator))) {
+    else if ((numbers.includes(Number(value)) && operators.some(operator => calculationDisplay.textContent.includes(operator)))) {
       temp = temp + value;
       b = Number.parseInt(temp)
       calculationDisplay.textContent = `${a} ${operator} ${b}`;
       console.log(b)
     }
-    else if (value in numbers && resultDisplay.textContent !== "") {
+    else if ((numbers.includes(Number(value)) && resultDisplay.textContent !== "")) {
       clearAll();
       calculationDisplay.textContent = value;
     }
 
 
-    else if (value in numbers) {
+    else if (numbers.includes(Number(value))) {
         calculationDisplay.textContent += value;
     }
     else if (operators.includes(value)) {
