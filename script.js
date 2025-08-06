@@ -7,6 +7,29 @@ const operators = ["+", "-", "÷", "×",]
 const equals = "="
 const clear = "AC"
 
+function add(a, b) {
+	return a + b;
+};
+
+function subtract(a, b) {
+	return a - b;
+};
+
+function multiply(a,b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  return a / b;
+}
+
+let a = 0;
+let b = 0;
+let operator = "";
+let temp ="";
+
+// arr.some(op => str.includes(op)
+
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const value = button.textContent;
@@ -14,8 +37,24 @@ buttons.forEach(button => {
     if (calculationDisplay.textContent === "0" && value in numbers) {
         calculationDisplay.textContent = value;
     }
+      else if (value in numbers && operators.some(op => calculationDisplay.textContent.includes(op))) {
+      temp = temp + value;
+      b = Number.parseInt(temp)
+      calculationDisplay.textContent = `${a} ${operator} ${b}`;
+      console.log(b)
+    }
     else if (value in numbers) {
         calculationDisplay.textContent += value;
     }
+
+
+
+    else if (operators.includes(value)) {
+      a = Number.parseInt(calculationDisplay.textContent);
+      operator = value;
+      calculationDisplay.textContent = `${a} ${value}`;
+      console.log(operator)
+    }
+    
   });
 });
