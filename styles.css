@@ -78,6 +78,17 @@ h1 {
     border-style: none;
     width: 50px;
     text-align: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.btn:hover {
+  background-color: #242832; /* Green */
+  color: white;
+}
+
+.btn:active {
+  border: 0.5px grey solid;
 }
 
 .action {
