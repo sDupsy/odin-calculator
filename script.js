@@ -11,11 +11,11 @@ buttons.forEach(button => {
   button.addEventListener("click", () => {
     const value = button.textContent;
     console.log("Button clicked:", value);
-    if (value in numbers) {
-    calculationDisplay.textContent = calculationDisplay.textContent + value;
+    if (calculationDisplay.textContent === "0" && value in numbers) {
+        calculationDisplay.textContent = value;
     }
-    else if (value in operators) {
-        calculationDisplay.textContent
+    else if (value in numbers) {
+        calculationDisplay.textContent += value;
     }
   });
 });
