@@ -40,6 +40,15 @@ function operate(num1, num2, operator) {
   }
 }
 
+function clearAll(){
+  resultDisplay.textContent = "";
+  calculationDisplay.textContent = 0;
+  a = 0;
+  b = 0;
+  operator = "";
+  temp = "";
+}
+
 let a = 0;
 let b = 0;
 let operator = "";
@@ -67,7 +76,10 @@ buttons.forEach(button => {
       calculationDisplay.textContent = `${a} ${operator} ${b}`;
       console.log(b)
     }
-    
+    else if (value in numbers && resultDisplay.textContent !== "") {
+      clearAll();
+      calculationDisplay.textContent = value;
+    }
 
 
     else if (value in numbers) {
@@ -92,10 +104,5 @@ equalsButton.addEventListener("click", () => {
 })
 
 clearButton.addEventListener("click", () => {
-  resultDisplay.textContent = "";
-  calculationDisplay.textContent = 0;
-  a = 0;
-  b = 0;
-  operator = "";
-  temp = "";
-})
+  clearAll()
+});
